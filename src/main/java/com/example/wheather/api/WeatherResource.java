@@ -7,7 +7,6 @@ import com.example.wheather.service.WeatherService;
 import com.example.wheather.service.model.WeatherResponseModel;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
 
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -31,8 +30,7 @@ public class WeatherResource {
 	public ResponseEntity<com.weather.api.model.WeatherResponse> getCurrentWeather(@RequestParam @NotNull Double lat, @RequestParam @NotNull Double lon) {
 		logger.info("got weather request with lat : {} and lon: {}", lat, lon);
 		WeatherResponseModel result = weatherService.getCurrentWeather(mapper.toWeatherRequestModel(lat, lon));
-		logger.info("successfully response is: {}", result);
-		return ResponseEntity.ok(mapper.toWeatherResponse(result));
+		logger.info("successfully response is: {}", result); return ResponseEntity.ok(mapper.toWeatherResponse(result));
 	}
 
 }
