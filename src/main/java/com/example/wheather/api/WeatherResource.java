@@ -1,17 +1,16 @@
-package com.example.weather;
+package com.example.wheather.api;
 
-import java.util.List;
+import javax.validation.constraints.NotNull;
 
-
+import com.example.wheather.api.mapper.WeatherResourceMapper;
+import com.example.wheather.service.WeatherService;
+import com.example.wheather.service.model.WeatherRequestModel;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
 
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,10 +27,11 @@ public class WeatherResource {
 	private final WeatherResourceMapper mapper;
 
 	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<WeatherResponse> getCurrentWeather(@RequestParam @NotNull Double lat, @RequestParam @NotNull Double lon) throws BusinessException {
-		logger.info("got weather request with lat : {} and lon: {}", lat, lon);
-		WeatherResponseModel result = service.getCurrentweather(mapper.toWeatherRequestModel(lat, lon));
-		logger.info("successfully respone is: {}", result); return ResponseEntity.ok(mapper.toWeatherResponse(result));
+	public ResponseEntity<com.weather.api.model.WeatherResponse> getCurrentWeather(@RequestParam @NotNull Double lat, @RequestParam @NotNull Double lon) throws Exception {
+//		logger.info("got weather request with lat : {} and lon: {}", lat, lon);
+		WeatherRequestModel result = weatherService.getCurrentWeather(mapper.toWeatherRequestModel(lat, lon));
+//		logger.info("successfully response is: {}", result);
+		return ResponseEntity.ok(mapper.toWeatherResponse(result));
 	}
 
 }

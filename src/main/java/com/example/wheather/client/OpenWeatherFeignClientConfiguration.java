@@ -1,13 +1,15 @@
-package com.weather.client;
+package com.example.wheather.client;
 
-import lombok.RequiredArgsConstructor;
 import feign.RequestInterceptor;
+import lombok.RequiredArgsConstructor;
+
+import org.springframework.context.annotation.Bean;
 
 
 @RequiredArgsConstructor
 public class OpenWeatherFeignClientConfiguration {
 
-	private final OpenWeatherProperties openWeatherProperties;
+	private final com.weather.client.OpenWeatherProperties openWeatherProperties;
 
 
 	@Bean

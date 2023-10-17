@@ -1,6 +1,12 @@
+package com.example.wheather.api.mapper;
+
+import com.example.wheather.service.model.WeatherRequestModel;
+import org.mapstruct.Mapper;
+
 @Mapper(componentModel = "spring")
-public interface Mapper {
+public interface WeatherResourceMapper {
 
-	WeatherResponse toWeatherResponse(WeatherResponseModel model);
+	WeatherRequestModel toWeatherRequestModel(Double lat, Double lon);
 
+	com.weather.api.model.WeatherResponse toWeatherResponse(WeatherRequestModel result);
 }

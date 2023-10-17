@@ -1,12 +1,9 @@
-package com.weather.service;
+package com.example.wheather.service;
 
-import java.util.List;
-
-import com.weather.srvice.model.*;
-
+import com.example.wheather.service.model.WeatherRequestModel;
 
 public interface WeatherService {
 
-	WeatherResponseModel getCurrentweather(WeatherRequestModel model);
+	WeatherRequestModel getCurrentWeather(WeatherRequestModel model);
 
 }

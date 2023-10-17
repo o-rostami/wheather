@@ -1,4 +1,4 @@
-package com.example.client.model;
+package com.example.wheather.client.model;
 
 public class WeatherResponse {
 

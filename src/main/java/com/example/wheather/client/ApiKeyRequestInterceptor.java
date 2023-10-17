@@ -1,8 +1,7 @@
-package com.weather.client;
+package com.example.wheather.client;
 
 import feign.RequestInterceptor;
-import org.springframework.web.client.RequestTemplate;
-
+import feign.RequestTemplate;
 
 
 public class ApiKeyRequestInterceptor implements RequestInterceptor {
