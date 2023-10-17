@@ -8,6 +8,7 @@ import lombok.Setter;
 public class WeatherResponse {
 
 	private String main;
+	private String name;
 
 	private String description;
 

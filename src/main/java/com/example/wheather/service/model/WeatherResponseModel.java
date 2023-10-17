@@ -7,4 +7,6 @@ import lombok.Setter;
 @Setter
 public class WeatherResponseModel {
 
+	private String name;
+
 }
