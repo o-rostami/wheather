@@ -4,7 +4,7 @@ import javax.validation.constraints.NotNull;
 
 import com.example.wheather.api.mapper.WeatherResourceMapper;
 import com.example.wheather.service.WeatherService;
-import com.example.wheather.service.model.WeatherRequestModel;
+import com.example.wheather.service.model.WeatherResponseModel;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -27,9 +27,9 @@ public class WeatherResource {
 	private final WeatherResourceMapper mapper;
 
 	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<com.weather.api.model.WeatherResponse> getCurrentWeather(@RequestParam @NotNull Double lat, @RequestParam @NotNull Double lon) throws Exception {
+	public ResponseEntity<com.weather.api.model.WeatherResponse> getCurrentWeather(@RequestParam @NotNull Double lat, @RequestParam @NotNull Double lon) {
 //		logger.info("got weather request with lat : {} and lon: {}", lat, lon);
-		WeatherRequestModel result = weatherService.getCurrentWeather(mapper.toWeatherRequestModel(lat, lon));
+		WeatherResponseModel result = weatherService.getCurrentWeather(mapper.toWeatherRequestModel(lat, lon));
 //		logger.info("successfully response is: {}", result);
 		return ResponseEntity.ok(mapper.toWeatherResponse(result));
 	}
