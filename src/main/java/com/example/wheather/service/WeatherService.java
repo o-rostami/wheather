@@ -1,20 +1,12 @@
-package com.digipay.merchantcredit.service.allocation;
+package com.weather.service;
 
 import java.util.List;
 
-import com.digipay.merchantcredit.model.allocation.AllocationJournal;
-import com.digipay.merchantcredit.model.allocation.AllocationJournal.Status;
+import com.weather.srvice.model.*;
 
-public interface AllocationService {
 
-	AllocationJournal getByEventSettlementTrackingCode(String settlementTrackingCode);
+public interface WeatherService {
 
-	List<AllocationJournal> getAllByEventTrackingCodes(List<String> trackingCodes);
-
-	List<AllocationJournal> getJournalsByStatuses(String profileId, List<Status> statuses);
-
-	AllocationJournal save(AllocationJournal journal);
-
-	List<AllocationJournal> saveAll(List<AllocationJournal> journal);
+	WeatherResponseModel getCurrentweather(WeatherRequestModel model);
 
 }

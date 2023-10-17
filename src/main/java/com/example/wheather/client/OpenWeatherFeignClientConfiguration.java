@@ -1,19 +1,18 @@
-package com.digipay.merchantcredit.iranvenezuela.config;
+package com.weather.client;
 
-import feign.auth.BasicAuthRequestInterceptor;
 import lombok.RequiredArgsConstructor;
+import feign.RequestInterceptor;
 
-import org.springframework.context.annotation.Bean;
 
 @RequiredArgsConstructor
-public class IranVenezuelaFeignClientConfiguration {
+public class OpenWeatherFeignClientConfiguration {
 
-	private final IranVenezuelaProperties iranVenezuelaProperties;
+	private final OpenWeatherProperties openWeatherProperties;
+
 
 	@Bean
-	public BasicAuthRequestInterceptor basicAuthRequestInterceptor() {
-		return new BasicAuthRequestInterceptor(iranVenezuelaProperties.getApiUsername(),
-				iranVenezuelaProperties.getApiPassword());
+	public RequestInterceptor apiKeyRequestInterceptor() {
+		return new ApiKeyRequestInterceptor(openWeatherProperties.getApikey());
 	}
 
 }
