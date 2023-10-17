@@ -1,4 +1,4 @@
-package com.example.wheather.client;
+package com.example.weather.client;
 
 import lombok.Getter;
 import lombok.Setter;

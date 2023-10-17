@@ -1,9 +1,9 @@
-package com.example.wheather.service;
+package com.example.weather.service;
 
-import com.example.wheather.client.OpenWeatherClient;
-import com.example.wheather.service.Mapper.WeatherServiceMapper;
-import com.example.wheather.service.model.WeatherRequestModel;
-import com.example.wheather.service.model.WeatherResponseModel;
+import com.example.weather.client.OpenWeatherClient;
+import com.example.weather.service.Mapper.WeatherServiceMapper;
+import com.example.weather.service.model.WeatherRequestModel;
+import com.example.weather.service.model.WeatherResponseModel;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.stereotype.Service;

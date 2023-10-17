@@ -1,7 +1,7 @@
-package com.example.wheather.client;
+package com.example.weather.client;
 
 
-import com.example.wheather.client.model.OpenWeatherClientResponse;
+import com.example.weather.api.OpenWeatherClientResponse;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.MediaType;

@@ -1,7 +1,7 @@
-package com.example.wheather.service.Mapper;
+package com.example.weather.service.Mapper;
 
-import com.example.wheather.client.model.OpenWeatherClientResponse;
-import com.example.wheather.service.model.WeatherResponseModel;
+import com.example.weather.api.OpenWeatherClientResponse;
+import com.example.weather.service.model.WeatherResponseModel;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
