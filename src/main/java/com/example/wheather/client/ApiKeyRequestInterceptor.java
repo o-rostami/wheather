@@ -14,6 +14,6 @@ public class ApiKeyRequestInterceptor implements RequestInterceptor {
 
 	@Override
 	public void apply(RequestTemplate requestTemplate) {
-		requestTemplate.header("X-API-KEY", apiKey);
+		requestTemplate.query( "appid", apiKey);
 	}
 }
