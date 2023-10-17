@@ -7,14 +7,14 @@ import org.springframework.context.annotation.Bean;
 
 
 @RequiredArgsConstructor
-public class OpenWeatherFeignClientConfiguration {
+public class OpenWeatherClientConfiguration {
 
-	private final com.weather.client.OpenWeatherProperties openWeatherProperties;
+	private final OpenWeatherClientProperties openWeatherClientProperties;
 
 
 	@Bean
 	public RequestInterceptor apiKeyRequestInterceptor() {
-		return new ApiKeyRequestInterceptor(openWeatherProperties.getApikey());
+		return new ApiKeyRequestInterceptor(openWeatherClientProperties.getApikey());
 	}
 
 }
